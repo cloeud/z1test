@@ -6,12 +6,12 @@ Espero que esta guía pueda ayudar a los revisores, para que su tarea no sea dem
 ¿Qué se ha utilizado para el desarrollo de la API?
 * **Python**
 * **Django**
-* **Postgres**
+* **PostgreSQL**
 * **GraphQL**
 
 ## Pre-requisitos
 Antes de interactuar con la API se deben tener instalados en el sistema Python 3 (para el desarrollo se ha utilizado la versión 3.9.6),
-Posgres y por útltimo una serie de paquetes que serán necesarios. Para la instalación de estos paquetes se ha creado el archivo requirements.txt y se debe ejecutar en un terminal:
+PostgreSQL y por útltimo una serie de paquetes que serán necesarios. Para la instalación de estos paquetes se ha creado el archivo requirements.txt y se debe ejecutar en un terminal:
 ```
 pip install -r requirements.txt 
 ```
