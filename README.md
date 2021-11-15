@@ -17,17 +17,17 @@ pip install -r requirements.txt
 ```
 
 Se debe tener creada una base de datos en postgres, en nuestro entorno local. 
-Para poder incluirla en el proyecto debe crearse un archivo .env dentro de Z1Test/Z1Test (es decir, al menos nivel que settings.py),
-donde se incluirán los datos necesarios para la conexión con la base de datos incluyendo en el mismo la siguiente línea:
+Para poder incluirla en el proyecto debe crearse un archivo .env dentro de Z1Test/Z1Test (es decir, al mismo nivel que settings.py),
+donde se incluirán los datos necesarios para la conexión con la base de datos. Un ejemplo sería la siguiente línea:
 ```
 DATABASE_URL=postgres://usuario:password@127.0.0.1:5432/nombre_database
 ```
 Donde se debe indicar el nombre de la base de datos junto con el usuario y la contraseña.
-Con este .env conseguimos un nivel de seguridad, ya que este archivo no se compartirá en GitHub,
-además puede utilizarse en el futuro para guardar distintos parámetros sensibles (como SECRET_KEY) o datos en general que no queramos que sean filtrados.
+Con este .env conseguimos un nivel extra de seguridad, ya que este archivo no se compartirá en GitHub.
+Además puede utilizarse en el futuro para guardar distintos parámetros sensibles (como SECRET_KEY) o datos en general que no queramos que sean filtrados.
 
 
-Una vez realizados estos pasos, pasaremos a hacer las migraciones necesarias para poner en un funcionamiento la api, para ello ejecutamos en la raíz del proyecto:
+Una vez realizados estos pasos, deben realizarse las migraciones necesarias para poner en funcionamiento la api, para ello se ejecutará en la raíz del proyecto:
 ```
 python manage.py makemigrations
 python manage.py migrate
