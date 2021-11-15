@@ -16,7 +16,7 @@ PostgreSQL y por útltimo una serie de paquetes que serán necesarios. Para la i
 pip install -r requirements.txt 
 ```
 
-Se debe tener creada una base de datos en posgres, en nuestro entorno local. 
+Se debe tener creada una base de datos en postgres, en nuestro entorno local. 
 Para poder incluirla en el proyecto debe crearse un archivo .env dentro de Z1Test/Z1Test (es decir, al menos nivel que settings.py),
 donde se incluirán los datos necesarios para la conexión con la base de datos incluyendo en el mismo la siguiente línea:
 ```
