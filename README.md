@@ -1,4 +1,4 @@
-# Prueba técnica para Abacum
+# Prueba técnica para Z1
 _Esta aplicación ha sido desarrollada como solución a la prueba técnica planteada por la empresa Z1. 
 Espero que esta guía pueda ayudar a los revisores, para que su tarea no sea demasiado pesada_
 
