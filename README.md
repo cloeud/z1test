@@ -34,22 +34,22 @@ python manage.py migrate
 ```
 
 ## API
-Siguiendo los pasos anteriores ya tendríamos instaladas todas las dependencias y conectada la base de datos al proyecto.
+Siguiendo los pasos anteriores ya se tendrían instaladas todas las dependencias y conectada la base de datos al proyecto.
 El siguiente paso sería lanzar la API para poder probarla, por lo que habría que ejecutar el siguiente comando:
 ```
 python manage.py runserver
 ```
-Con ello la API estaría lista para usar en la dirección _http://127.0.0.1:8000/_, donde encontraremos dos endpoints: 
+Con ello la API estaría lista para usar en la dirección _http://127.0.0.1:8000/_, donde se encontrarán dos endpoints: 
 _/admin/_ que viene por defecto en django y _/graphql/_, que se usará para realizar todas las peticiones.
 
 ### Estructura de la API
-La estructura de la API es sencilla e intuitiva. En la raíz tendremos la carpeta principal del proyecto, la de la api y los archivos de manage.py y README.me.
-En la carpeta principal estará alojado el archivo settings.py para las distintas configuraciones, el urls.py para nuestras rutas, asgi.py, wsgi.py y por último alojaremos aquí el archivo .env antes comentado.
-En la carpeta de la api tendremos los archivos que vienen por defecto al crear una app junto con algunos nuevos, como types.py, schema.py y mutations.py que serán de utilidad para trabajar con GraphQL. 
-Por último añadir que el archivo de tests.py se ha sustituido por un paquete donde dentro encontraremos tests de la aplicación separados por archivos junto con un utils.py con funciones comunes. 
+La estructura de la API es sencilla e intuitiva. En la raíz se sitúa el directorio principal principal del proyecto, el de la api y los archivos de manage.py y README.me.
+En la carpeta principal estará alojado el archivo settings.py para las distintas configuraciones, el urls.py para las rutas, asgi.py, wsgi.py y por último se alojará aquí el archivo .env antes comentado.
+En la carpeta de la api se tendrán los archivos que vienen por defecto al crear una app junto con algunos nuevos, como types.py, schema.py y mutations.py que serán de utilidad para trabajar con GraphQL. 
+Por último añadir que el archivo de tests.py se ha sustituido por un paquete donde dentro se encontrarán los tests de la aplicación separados por archivos junto con un utils.py con funciones comunes. 
 
 ### Modelos
-Primero veremos cómo se han creado los modelos para llevar a cabo este proyecto. Se han creado 4 clases:
+En esta sección se verá una breve descripción de los modelos creados para llevar a cabo este proyecto. Se han creado 4 clases:
 * **User**: hereda directamente de _AbstractUser_ y se ha dejado ya creada (aunque vacía) para posibles ampliaciones que se quieran hacer respecto a los usuarios.
 * **Profile**: está ligado a cada usuario y se usará para administrar la lista de followers y followed (seguidores y personas a las que seguimos).
 * **FollowRequest**: aquí se almacenarán todas las peticiones de seguimiento que se hagan (cuyo posibles estados son pending, accepted o rejected y por defecto pending).
@@ -293,9 +293,10 @@ Se procederá a comentar y proponer ciertas mejoras de la API desarrollada:
 * **Notifaciones push**: desarrollar notificaciones push, no sólo para cuando un usuario que seguimos publique una idea, también para cuando se recibe una petición y otros casos interesantes.
 * **Settings**: aunque ya se ha comentado que para este proyecto es necesario un archivo .env para especificar la base de datos, podría también usarse para almacenar ciertos parámetros sensibles (como SECRET_KEY) o distintas configuraciones que quieran darse.
 * **Gestión de errores**: otro punto muy importante a mejorar, se debería hacer un profundo análisis de los distintos errores que podrían darse y distintas formas de gestionarlos y hacérselos llegar al usuario.
+* **Perfil**: tal y como se comentó antes en los modelos, existe un modelo Profile para consultar la lista de seguidores y seguidos, pero este perfil podría dar mucho más de sí, ampliando con información relevante relacionada a cada usuario.
 * **Superuser**: sólo se ha desarrollado un endpoint para ver todos los usuarios en caso de que seas superusuario, pero podrían desarrollarse más en caso de que se tuviera pensado establecer este tipo de rol en cierto usuario con privilegios.
 * **Modelo de usuario**: como se ha comentado antes, el modelo de usuario que hereda de AbstractUser, se ha dejado creado en los modelos pero sin ningún tipo de ampliación por si en el futuro se pretende ampliar o añadir algún campo.
-* **Mejoras a nivel de aplicación**: debido a que la prueba técnica era crear una pequeña red social, se podrían añadir ciertas mejoras, como creación de ideas 'fugaces' que estén visibles durante solo un día, poder clasificar a tus seguidores para que puedan acceder a contenidos que otros no pueden, etc...
+* **Mejoras a nivel de red social**: debido a que la prueba técnica era crear una pequeña red social, se podrían añadir ciertas mejoras, como creación de ideas 'fugaces' que estén visibles durante solo un día, poder clasificar a tus seguidores para que puedan acceder a contenidos que otros no pueden, etc...
 
 ## Agradecimientos
 Quería aprovechar este pequeño apartado para expresar mi gratitud a la empresa Z1 por confiar en mi trabajo y permitirme realizar esta prueba.
