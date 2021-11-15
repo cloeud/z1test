@@ -26,6 +26,13 @@ Donde se debe indicar el nombre de la base de datos junto con el usuario y la co
 Con este .env conseguimos un nivel de seguridad, ya que este archivo no se compartirá en GitHub,
 además puede utilizarse en el futuro para guardar distintos parámetros sensibles (como SECRET_KEY) o datos en general que no queramos que sean filtrados.
 
+
+Una vez realizados estos pasos, pasaremos a hacer las migraciones necesarias para poner en un funcionamiento la api, para ello ejecutamos en la raíz del proyecto:
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 ## API
 Siguiendo los pasos anteriores ya tendríamos instaladas todas las dependencias y conectada la base de datos al proyecto.
 El siguiente paso sería lanzar la API para poder probarla, por lo que habría que ejecutar el siguiente comando:
